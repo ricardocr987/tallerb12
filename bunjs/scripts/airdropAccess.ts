@@ -48,7 +48,7 @@ async function airdropAccess() {
     
     try {
         const sig = await connection.sendTransaction(txn);
-        console.log(sig);
+        console.log(`https://explorer.solana.com/tx/${sig}?cluster=devnet`);
     } catch(e) {
         console.log(e);
     }

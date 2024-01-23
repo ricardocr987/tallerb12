@@ -21,7 +21,7 @@ export const SolanaContextProvider: FC<{ children: ReactNode }> = ({ children })
     );
 
     return (
-        <ConnectionProvider endpoint={process.env.NEXT_PUBLIC_HELIUS_URL!}>
+        <ConnectionProvider endpoint={process.env.NEXT_PUBLIC_RPC!}>
             <WalletProvider wallets={wallets} onError={onError}>
                 {children}
             </WalletProvider>

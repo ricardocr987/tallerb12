@@ -27,7 +27,7 @@ export function PurchaseButton({ productInfo }: { productInfo: ProductInfo }) {
         const serializedBase64 = await response.json();
         const serializedBuffer = Buffer.from(serializedBase64.transaction, 'base64');
         const transaction = VersionedTransaction.deserialize(serializedBuffer);
-        const connection = new Connection(process.env.NEXT_PUBLIC_HELIUS_URL!);
+        const connection = new Connection(process.env.NEXT_PUBLIC_RPC!);
         const signature = await sendTransaction(transaction, connection);
         console.log(signature)
     }

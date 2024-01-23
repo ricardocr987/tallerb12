@@ -27,6 +27,7 @@ async function initMarketplace() {
         ],
         programId
     );
+    console.log('Guarda la pubkey de tu marketplace:', marketplacePubkey)
     const [accessMint, accessMintBump] = PublicKey.findProgramAddressSync(
         [
             Buffer.from("access_mint", "utf-8"),
@@ -55,7 +56,7 @@ async function initMarketplace() {
     
     try {
         const sig = await connection.sendTransaction(txn);
-        console.log(sig);
+        console.log(`https://explorer.solana.com/tx/${sig}?cluster=devnet`);
     } catch(e) {
         console.log(e);
     }
